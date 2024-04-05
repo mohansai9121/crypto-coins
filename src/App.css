@@ -1,3 +1,29 @@
 .app{
   text-align: center;
 }
+.heading{
+  border: 2px solid brown;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  font-size: xx-large;
+  color: #604A39;
+  text-shadow: 2px 3px 5px gray;
+  background-color: bisque;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 20px;
+}
+.scrolling{
+  font-size: large;
+  color: #E22133;
+  animation: scroll 10s linear infinite;
+  transform: translateX(100%);
+}
+@keyframes scroll {
+  from{
+    transform: translate(100%);
+  }
+  to{
+    transform: translate(-50%);
+  }
+}
