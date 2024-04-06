@@ -27,3 +27,33 @@
     transform: translate(-50%);
   }
 }
+.container{
+  display:grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-auto-rows: 200px;
+  margin: 2%;
+}
+.card{
+  margin: 2%;
+  border: 1px solid gray;
+  padding: 10px;
+  max-width: 140px;
+  max-height: 200px;
+  overflow: scroll;
+  box-shadow: 0px 0px 5px gray;
+}
+.image-shadow{
+  animation: rotation 15s infinite;
+  transform: rotate(0deg);
+}
+@keyframes rotation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.image-shadow:hover{
+  box-shadow: 0px 0px 30px gray;
+}
