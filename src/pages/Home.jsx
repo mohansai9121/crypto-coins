@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../App.css'
 import { Link } from 'react-router-dom'
@@ -7,20 +7,30 @@ const Home = () => {
     const [allCoins, setAllCoins] = useState([])
     const [search, setSearch] = useState("")
     console.log(search)
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false').then(
+    /*axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false').then(
       (response)=>{
         setAllCoins(response.data)
         localStorage.setItem('cryptoCoins', JSON.stringify(response.data))
       }
     ).catch((err)=>{
       console.log(err)
-    })
-    /*useEffect(()=>{
+    })*/
+    useEffect(()=>{
         let coins = JSON.parse(localStorage.getItem('cryptoCoins'))
         if(coins){
             setAllCoins(coins)
         }
-    },[])*/
+        else{
+            axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false').then(
+                (response)=>{
+                    setAllCoins(response.data)
+                    localStorage.setItem('cryptoCoins', JSON.stringify(response.data))
+                }
+            ).catch((err)=>{
+                console.log(err)
+            })
+        }
+    },[])
     console.log(allCoins)
     return (
       <div>
