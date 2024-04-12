@@ -30,7 +30,7 @@
 .container{
   display:grid;
   grid-template-columns: repeat(3, 200px);
-  grid-auto-rows: 200px;
+  grid-auto-rows: 220px;
   margin: 2%;
   overflow: scroll;
 }
@@ -57,4 +57,39 @@
 }
 .image-shadow:hover{
   box-shadow: 0px 0px 30px gray;
+}
+.singleCoin{
+  align-content: center;
+  margin: 2%;
+  border: 1px solid black;
+  background-color: bisque;
+  overflow: scroll;
+  border-radius: 5px;
+}
+.singleImage{
+  margin-top: 3%;
+  overflow: scroll;
+  box-shadow: 0px 0px 5px gray;
+}
+.backButton{
+  padding: 5px;
+  border: 1px solid #E16B1D;
+  background-color: #E16B1D;
+  border-radius: 10px;
+  margin-left: 2%;
+}
+.backButton:hover{
+  padding: 7px;
+  box-shadow: 0px 0px 5px gray;
+}
+.detailsButton{
+  padding: 5px;
+  border: 2px solid gray;
+  margin: 2%;
+  background-color: #76D931;
+  border-radius: 5px;
+}
+.detailsButton:hover{
+  border: 2px solid green;
+  box-shadow: 0px 0px 5px gray;
 }
